@@ -56,6 +56,7 @@ class Worksheet < Spreadsheet::Worksheet
     end
   end
   def row_updated idx, row
+    super.row_updated(idx, row)
     res = super
     @workbook.changes.store self, true
     @workbook.changes.store :boundsheets, true
